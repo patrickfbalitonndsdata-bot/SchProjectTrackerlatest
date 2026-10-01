@@ -1,0 +1,1204 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Syne", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Navy Blue Palette Tokens */
+  --color-navy-950: #060D1E;
+  --color-navy-900: #0B1736;
+  --color-navy-850: #102046;
+  --color-navy-800: #162C5C;
+  --color-navy-700: #1C3565;
+  --color-navy-600: #23427D;
+  --color-navy-border: #1C3565;
+  --color-navy-border-subtle: #14274C;
+
+  /* Gold / Yellow Palette Tokens */
+  --color-gold-50: #FEFCE8;
+  --color-gold-100: #FEF9C3;
+  --color-gold-200: #FEF08A;
+  --color-gold-300: #FDE047;
+  --color-gold-400: #FACC15;
+  --color-gold-500: #EAB308;
+  --color-gold-600: #CA8A04;
+  --color-gold-amber: #F59E0B;
+  --color-gold-amber-hover: #FBBF24;
+}
+
+body {
+  background-color: #F4F7FB;
+  color: #0F172A;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ==========================================================================
+   NAVY BLUE & GOLD / YELLOW DARK MODE PALETTE
+   Applies across all parts, tabs, buttons, inputs, tables, and texts
+   ========================================================================== */
+
+html.dark {
+  color-scheme: dark;
+  background-color: #060D1E;
+}
+
+html.dark body {
+  background-color: #060D1E;
+  color: #F8FAFC;
+}
+
+/* Base Surfaces & Cards in Dark Mode */
+.dark .bg-white {
+  background-color: #0B1736 !important;
+}
+
+.dark .bg-white\/95,
+.dark .bg-white\/90,
+.dark .bg-white\/85,
+.dark .bg-white\/80 {
+  background-color: rgba(11, 23, 54, 0.95) !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-50\/70,
+.dark .bg-slate-50\/80 {
+  background-color: #0F1F44 !important;
+}
+
+.dark .bg-slate-100,
+.dark .bg-slate-100\/90,
+.dark .bg-slate-100\/80 {
+  background-color: #12244E !important;
+}
+
+.dark .bg-blue-50,
+.dark .bg-blue-50\/70,
+.dark .bg-blue-50\/80,
+.dark .bg-blue-50\/90 {
+  background-color: #11244E !important;
+}
+
+.dark .bg-blue-100,
+.dark .bg-blue-100\/80,
+.dark .bg-blue-100\/90 {
+  background-color: #162E63 !important;
+}
+
+/* Borders in Dark Mode (Navy hairline dividers) */
+.dark .border-slate-200,
+.dark .border-slate-200\/90,
+.dark .border-slate-300,
+.dark .border-slate-100,
+.dark .border-blue-100,
+.dark .border-blue-100\/70,
+.dark .border-blue-100\/80,
+.dark .border-blue-200,
+.dark .border-blue-200\/80,
+.dark .border-blue-200\/90,
+.dark .border-blue-300 {
+  border-color: #1C3565 !important;
+}
+
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #162A50 !important;
+}
+
+/* Neutral Surfaces & Dividers in Dark Mode */
+.dark .bg-neutral-950,
+.dark .bg-neutral-900 {
+  background-color: #060D1E !important;
+}
+
+.dark .bg-neutral-100,
+.dark .bg-neutral-200 {
+  background-color: #12244E !important;
+  color: #CBD5E1 !important;
+}
+
+.dark .bg-neutral-50 {
+  background-color: #0F1F44 !important;
+}
+
+.dark .border-neutral-100,
+.dark .border-neutral-200,
+.dark .border-neutral-300,
+.dark .border-neutral-400 {
+  border-color: #1C3565 !important;
+}
+
+.dark .hover\:bg-neutral-50:hover,
+.dark .hover\:bg-neutral-100:hover {
+  background-color: #162C5C !important;
+}
+
+/* Typographic Hierarchy in Dark Mode (Navy & Gold/Yellow) */
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-950,
+.dark .text-blue-950,
+.dark .text-neutral-950,
+.dark .text-neutral-900,
+.dark .text-neutral-800 {
+  color: #F8FAFC !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-neutral-700,
+.dark .text-neutral-600 {
+  color: #CBD5E1 !important;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-400,
+.dark .text-neutral-500,
+.dark .text-neutral-400 {
+  color: #94A3B8 !important;
+}
+
+.dark .text-blue-900 {
+  color: #FDE047 !important;
+}
+
+.dark .text-blue-600,
+.dark .text-blue-700,
+.dark .text-blue-800,
+.dark .text-sky-600 {
+  color: #FBBF24 !important; /* Rich warm gold accent text */
+}
+
+/* Interactive Buttons: Primary Action (Gold / Yellow Buttons with Navy Text) */
+.dark .bg-blue-600 {
+  background-color: #F59E0B !important;
+  color: #060D1E !important;
+  font-weight: 700 !important;
+  border-color: #F59E0B !important;
+}
+
+.dark .bg-blue-600:hover,
+.dark .hover\:bg-blue-700:hover,
+.dark .bg-blue-700 {
+  background-color: #FBBF24 !important;
+  color: #060D1E !important;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3) !important;
+}
+
+.dark .bg-blue-600 svg,
+.dark .bg-blue-600 path {
+  color: #060D1E !important;
+  stroke: #060D1E !important;
+}
+
+.dark .bg-blue-500 {
+  background-color: #EAB308 !important;
+  color: #060D1E !important;
+  font-weight: 700 !important;
+}
+
+.dark .bg-blue-500:hover {
+  background-color: #FACC15 !important;
+  color: #060D1E !important;
+}
+
+.dark .hover\:bg-blue-50:hover,
+.dark .hover\:bg-blue-50\/70:hover,
+.dark .hover\:bg-blue-50\/80:hover {
+  background-color: #14274C !important;
+  color: #FDE047 !important;
+}
+
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-slate-50:hover {
+  background-color: #12244E !important;
+}
+
+/* Form Controls (Inputs, Selects, Dropdowns, Date/Time pickers) */
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark select,
+.dark textarea {
+  background-color: #081229 !important;
+  color: #F8FAFC !important;
+  border-color: #1C3565 !important;
+}
+
+.dark input:not([type="checkbox"]):not([type="radio"])::placeholder,
+.dark textarea::placeholder {
+  color: #64748B !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #F59E0B !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
+  outline: none !important;
+}
+
+.dark input:disabled,
+.dark select:disabled,
+.dark textarea:disabled,
+.dark button:disabled,
+.dark button[disabled] {
+  background-color: #060E21 !important;
+  color: #64748B !important;
+  border-color: #14274C !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+/* Select option elements */
+.dark select option {
+  background-color: #081229 !important;
+  color: #F8FAFC !important;
+}
+
+/* Calendar icon / Date picker indicator in dark mode */
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(1) saturate(5) hue-rotate(5deg);
+  cursor: pointer;
+}
+
+/* Navigation Dock & Tabs */
+.dark nav {
+  background-color: #0B1736 !important;
+  border-color: #1C3565 !important;
+}
+
+.dark nav button {
+  color: #CBD5E1 !important;
+}
+
+.dark nav button:hover {
+  color: #FDE047 !important;
+  background-color: rgba(22, 46, 92, 0.6) !important;
+}
+
+.dark nav button.bg-blue-600 {
+  background-color: #F59E0B !important;
+  color: #060D1E !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35) !important;
+}
+
+.dark nav button.bg-blue-600 svg {
+  color: #060D1E !important;
+  stroke: #060D1E !important;
+}
+
+/* Table Elements (RecentEntries & SheetMirrorViewer) */
+.dark table thead,
+.dark table thead tr {
+  background-color: #081229 !important;
+}
+
+.dark table thead th {
+  color: #FBBF24 !important; /* Gold table headers */
+  border-color: #1C3565 !important;
+}
+
+.dark table tbody tr {
+  background-color: #0B1736 !important;
+  border-color: #14274C !important;
+}
+
+.dark table tbody tr:hover {
+  background-color: #102148 !important;
+}
+
+.dark table tbody td {
+  border-color: #14274C !important;
+  color: #E2E8F0 !important;
+}
+
+/* Status Badges, Chips & Pills (Navy background + Gold border & text) */
+.dark .bg-blue-50.text-blue-700,
+.dark .bg-blue-50.text-blue-800 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  color: #FDE047 !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+/* Modals & Backdrop Overlays */
+.dark .fixed.inset-0.bg-slate-900\/60,
+.dark .fixed.inset-0.bg-black\/50,
+.dark .fixed.inset-0.bg-black\/60,
+.dark .fixed.inset-0.bg-black\/70 {
+  background-color: rgba(4, 9, 23, 0.82) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+/* Alert Boxes & Notifications in Dark Mode */
+.dark .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+.dark .text-amber-800,
+.dark .text-amber-900,
+.dark .text-amber-700 {
+  color: #FDE047 !important;
+}
+
+.dark .bg-red-50,
+.dark .bg-rose-50 {
+  background-color: rgba(239, 68, 68, 0.12) !important;
+  border-color: rgba(239, 68, 68, 0.35) !important;
+}
+
+.dark .text-red-700,
+.dark .text-red-800,
+.dark .text-rose-700,
+.dark .text-rose-800 {
+  color: #FCA5A5 !important;
+}
+
+.dark .bg-emerald-50,
+.dark .bg-green-50 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+}
+
+/* Code Blocks & Preformatted Text */
+.dark pre,
+.dark code:not(.inline-code) {
+  background-color: #060D1E !important;
+  border-color: #1C3565 !important;
+  color: #FDE047 !important;
+}
+
+/* Header & Footer */
+.dark header {
+  background-color: rgba(11, 23, 54, 0.95) !important;
+  border-color: #1C3565 !important;
+}
+
+.dark footer {
+  background-color: #0B1736 !important;
+  border-color: #1C3565 !important;
+  color: #CBD5E1 !important;
+}
+
+/* Scrollbars in Dark Mode (Navy track with Gold hover) */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #060D1E;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #1C3565;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #F59E0B;
+}
+
+/* ==========================================================================
+   SPHERICAL 3D ORBITAL TRANSITION ANIMATIONS
+   "Sliding circular sidewards like a sphere circling"
+   ========================================================================== */
+
+.sphere-stage {
+  perspective: 1400px;
+  perspective-origin: 50% 30%;
+  transform-style: preserve-3d;
+  width: 100%;
+  position: relative;
+  overflow-x: clip;
+  min-height: calc(100vh - 12rem);
+}
+
+/* 1. Moving to Mirror (Sphere rotates left: current exits left, next enters from right) */
+@keyframes sphere-circle-left-out {
+  0% {
+    transform: perspective(1400px) rotateY(0deg) translateZ(0px) translateX(0%) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+    border-radius: 0px;
+  }
+  35% {
+    opacity: 0.85;
+    border-radius: 24px;
+    transform: perspective(1400px) rotateY(-22deg) translateZ(-140px) translateX(-20%) scale(0.95);
+  }
+  70% {
+    opacity: 0.45;
+    border-radius: 44px;
+    transform: perspective(1400px) rotateY(-46deg) translateZ(-300px) translateX(-45%) scale(0.86);
+  }
+  100% {
+    transform: perspective(1400px) rotateY(-70deg) translateZ(-460px) translateX(-70%) scale(0.78);
+    opacity: 0;
+    filter: blur(7px);
+    border-radius: 64px;
+  }
+}
+
+@keyframes sphere-circle-left-in {
+  0% {
+    transform: perspective(1400px) rotateY(70deg) translateZ(-460px) translateX(70%) scale(0.78);
+    opacity: 0;
+    filter: blur(7px);
+    border-radius: 64px;
+  }
+  30% {
+    opacity: 0.55;
+    border-radius: 44px;
+    transform: perspective(1400px) rotateY(46deg) translateZ(-300px) translateX(45%) scale(0.86);
+  }
+  65% {
+    opacity: 0.95;
+    border-radius: 24px;
+    transform: perspective(1400px) rotateY(22deg) translateZ(-140px) translateX(20%) scale(0.95);
+  }
+  100% {
+    transform: perspective(1400px) rotateY(0deg) translateZ(0px) translateX(0%) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+    border-radius: 0px;
+  }
+}
+
+/* 2. Moving to Entry (Sphere rotates right: current exits right, next enters from left) */
+@keyframes sphere-circle-right-out {
+  0% {
+    transform: perspective(1400px) rotateY(0deg) translateZ(0px) translateX(0%) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+    border-radius: 0px;
+  }
+  35% {
+    opacity: 0.85;
+    border-radius: 24px;
+    transform: perspective(1400px) rotateY(22deg) translateZ(-140px) translateX(20%) scale(0.95);
+  }
+  70% {
+    opacity: 0.45;
+    border-radius: 44px;
+    transform: perspective(1400px) rotateY(46deg) translateZ(-300px) translateX(45%) scale(0.86);
+  }
+  100% {
+    transform: perspective(1400px) rotateY(70deg) translateZ(-460px) translateX(70%) scale(0.78);
+    opacity: 0;
+    filter: blur(7px);
+    border-radius: 64px;
+  }
+}
+
+@keyframes sphere-circle-right-in {
+  0% {
+    transform: perspective(1400px) rotateY(-70deg) translateZ(-460px) translateX(-70%) scale(0.78);
+    opacity: 0;
+    filter: blur(7px);
+    border-radius: 64px;
+  }
+  30% {
+    opacity: 0.55;
+    border-radius: 44px;
+    transform: perspective(1400px) rotateY(-46deg) translateZ(-300px) translateX(-45%) scale(0.86);
+  }
+  65% {
+    opacity: 0.95;
+    border-radius: 24px;
+    transform: perspective(1400px) rotateY(-22deg) translateZ(-140px) translateX(-20%) scale(0.95);
+  }
+  100% {
+    transform: perspective(1400px) rotateY(0deg) translateZ(0px) translateX(0%) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+    border-radius: 0px;
+  }
+}
+
+/* Orbital horizon sweeps */
+@keyframes sphere-orbit-sweep-left {
+  0% {
+    transform: translateX(80%) scaleX(0.4);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%) scaleX(1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(-80%) scaleX(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes sphere-orbit-sweep-right {
+  0% {
+    transform: translateX(-80%) scaleX(0.4);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%) scaleX(1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(80%) scaleX(0.4);
+    opacity: 0;
+  }
+}
+
+.animate-sphere-left-out {
+  animation: sphere-circle-left-out 520ms cubic-bezier(0.25, 1, 0.33, 1) forwards;
+  transform-origin: 15% 50%;
+  will-change: transform, opacity, filter;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+.animate-sphere-left-in {
+  animation: sphere-circle-left-in 520ms cubic-bezier(0.25, 1, 0.33, 1) forwards;
+  transform-origin: 85% 50%;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+.animate-sphere-right-out {
+  animation: sphere-circle-right-out 520ms cubic-bezier(0.25, 1, 0.33, 1) forwards;
+  transform-origin: 85% 50%;
+  will-change: transform, opacity, filter;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+.animate-sphere-right-in {
+  animation: sphere-circle-right-in 520ms cubic-bezier(0.25, 1, 0.33, 1) forwards;
+  transform-origin: 15% 50%;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+.animate-sphere-orbit-left {
+  animation: sphere-orbit-sweep-left 520ms cubic-bezier(0.25, 1, 0.33, 1) forwards;
+}
+
+.animate-sphere-orbit-right {
+  animation: sphere-orbit-sweep-right 520ms cubic-bezier(0.25, 1, 0.33, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sphere-left-out,
+  .animate-sphere-left-in,
+  .animate-sphere-right-out,
+  .animate-sphere-right-in {
+    animation-duration: 1ms !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* ==========================================================================
+   HOLIDAY SEASONS ANIMATIONS & COLOR PALETTES
+   Halloween (Oct 30 - Nov 30), Christmas Eve (Dec 22-24),
+   Christmas (Dec 1-21 & 25-31), New Year (Jan 1-15)
+   ========================================================================== */
+
+/* Bat animations */
+@keyframes bat-wing {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.35) translateY(-3px);
+  }
+}
+
+.animate-bat-wing {
+  animation: bat-wing 0.28s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes bat-trajectory-1 {
+  0% {
+    transform: translate(-10vw, 12vh) scale(0.85);
+  }
+  25% {
+    transform: translate(30vw, 5vh) scale(1);
+  }
+  50% {
+    transform: translate(65vw, 16vh) scale(1.1);
+  }
+  75% {
+    transform: translate(90vw, 8vh) scale(0.95);
+  }
+  100% {
+    transform: translate(110vw, 12vh) scale(0.85);
+  }
+}
+
+@keyframes bat-trajectory-2 {
+  0% {
+    transform: translate(110vw, 24vh) scale(1.1) scaleX(-1);
+  }
+  50% {
+    transform: translate(45vw, 10vh) scale(0.95) scaleX(-1);
+  }
+  100% {
+    transform: translate(-15vw, 26vh) scale(1.05) scaleX(-1);
+  }
+}
+
+@keyframes bat-trajectory-3 {
+  0% {
+    transform: translate(-10vw, 5vh) scale(0.7);
+  }
+  50% {
+    transform: translate(50vw, 20vh) scale(0.8);
+  }
+  100% {
+    transform: translate(110vw, 4vh) scale(0.75);
+  }
+}
+
+@keyframes bat-trajectory-4 {
+  0% {
+    transform: translate(110vw, 32vh) scale(0.9) scaleX(-1);
+  }
+  100% {
+    transform: translate(-10vw, 18vh) scale(1) scaleX(-1);
+  }
+}
+
+.animate-bat-fly-1 {
+  animation: bat-trajectory-1 16s linear infinite;
+  will-change: transform;
+}
+.animate-bat-fly-2 {
+  animation: bat-trajectory-2 20s linear infinite 3s;
+  will-change: transform;
+}
+.animate-bat-fly-3 {
+  animation: bat-trajectory-3 14s linear infinite 7s;
+  will-change: transform;
+}
+.animate-bat-fly-4 {
+  animation: bat-trajectory-4 22s linear infinite 11s;
+  will-change: transform;
+}
+
+/* Witch flying across the moon */
+@keyframes witch-fly {
+  0% {
+    transform: translate(-120px, 0) rotate(-2deg);
+  }
+  30% {
+    transform: translate(35vw, 18px) rotate(3deg);
+  }
+  70% {
+    transform: translate(75vw, -12px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(calc(100vw + 120px), 10px) rotate(2deg);
+  }
+}
+
+.animate-witch-fly {
+  animation: witch-fly 26s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Floating translucent ghosts */
+@keyframes ghost-float-1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(15px, -24px) rotate(3deg);
+  }
+}
+
+@keyframes ghost-float-2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-20px, -28px) rotate(-4deg);
+  }
+}
+
+@keyframes ghost-float-3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(12px, -20px) rotate(2deg);
+  }
+}
+
+.animate-ghost-float-1 {
+  animation: ghost-float-1 7s ease-in-out infinite;
+}
+.animate-ghost-float-2 {
+  animation: ghost-float-2 9s ease-in-out infinite 1.5s;
+}
+.animate-ghost-float-3 {
+  animation: ghost-float-3 8s ease-in-out infinite 3s;
+}
+
+@keyframes reindeer-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-reindeer-gentle {
+  animation: reindeer-gentle 4s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   SEASON 1: HALLOWEEN PALETTE (October 30 - November 30)
+   Spooky cemetery/haunted house theme, sinister pumpkin & ghost violet
+   Transparent glassmorphism to show spooky background
+   ========================================================================== */
+html.season-halloween {
+  color-scheme: dark;
+  background-color: #090314 !important;
+}
+
+html.season-halloween body {
+  background-color: #090314 !important;
+  color: #F8FAFC !important;
+}
+
+.season-halloween .bg-white,
+.season-halloween.dark .bg-white {
+  background-color: rgba(18, 6, 38, 0.65) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.season-halloween .bg-slate-50,
+.season-halloween .bg-slate-100 {
+  background-color: rgba(24, 9, 51, 0.55) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.season-halloween header {
+  background-color: rgba(18, 6, 38, 0.85) !important;
+  border-color: #581c87 !important;
+  box-shadow: 0 4px 25px rgba(249, 115, 22, 0.15) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.season-halloween footer {
+  background-color: rgba(12, 3, 26, 0.9) !important;
+  border-color: #581c87 !important;
+}
+
+.season-halloween nav {
+  background-color: rgba(21, 7, 44, 0.85) !important;
+  border-color: #581c87 !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.season-halloween .bg-blue-600,
+.season-halloween .bg-blue-500 {
+  background-color: #F97316 !important;
+  color: #090314 !important;
+  border-color: #F97316 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.5) !important;
+}
+
+.season-halloween .bg-blue-600:hover,
+.season-halloween .hover\:bg-blue-700:hover {
+  background-color: #FB923C !important;
+  color: #090314 !important;
+}
+
+.season-halloween .text-blue-600,
+.season-halloween .text-blue-700,
+.season-halloween .text-blue-800 {
+  color: #FB923C !important;
+}
+
+.season-halloween .border-slate-200,
+.season-halloween .border-blue-100,
+.season-halloween .border-blue-200 {
+  border-color: rgba(168, 85, 247, 0.35) !important;
+}
+
+/* Halloween Form Controls & Project Number */
+.season-halloween input:not([type="checkbox"]):not([type="radio"]),
+.season-halloween select,
+.season-halloween textarea {
+  background-color: rgba(24, 9, 51, 0.75) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(249, 115, 22, 0.5) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.season-halloween input:focus,
+.season-halloween select:focus,
+.season-halloween textarea:focus {
+  border-color: #F97316 !important;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.35), 0 0 16px rgba(249, 115, 22, 0.3) !important;
+}
+
+.season-halloween input::placeholder,
+.season-halloween textarea::placeholder {
+  color: rgba(216, 180, 254, 0.6) !important;
+}
+
+.season-halloween input[id*="projectNumber"] {
+  background-color: rgba(24, 9, 51, 0.8) !important;
+  border: 2px solid #F97316 !important;
+  color: #FB923C !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.3) !important;
+}
+
+.season-halloween #file-drop-zone {
+  background-color: rgba(24, 9, 51, 0.5) !important;
+  border: 2px dashed rgba(249, 115, 22, 0.65) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.15) !important;
+}
+
+.season-halloween #file-drop-zone:hover {
+  background-color: rgba(35, 14, 74, 0.7) !important;
+  border-color: #FB923C !important;
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.35) !important;
+}
+
+.season-halloween label,
+.season-halloween .text-slate-700,
+.season-halloween .text-slate-800,
+.season-halloween .text-slate-900 {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.season-halloween .text-slate-500,
+.season-halloween .text-slate-600 {
+  color: #E9D5FF !important;
+}
+
+/* ==========================================================================
+   SEASON 2 & 3: CHRISTMAS & CHRISTMAS EVE PALETTE (December)
+   Holiday Pine Green, Ruby Crimson Red, Snowflake White & Gold
+   Transparent winter wonderland frost glassmorphism
+   ========================================================================== */
+html.season-christmas,
+html.season-christmas-eve {
+  color-scheme: dark;
+  background-color: #03140D !important;
+}
+
+html.season-christmas body,
+html.season-christmas-eve body {
+  background-color: #03140D !important;
+  color: #F8FAFC !important;
+}
+
+.season-christmas .bg-white,
+.season-christmas-eve .bg-white,
+.season-christmas.dark .bg-white,
+.season-christmas-eve.dark .bg-white {
+  background-color: rgba(6, 36, 26, 0.65) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.season-christmas .bg-slate-50,
+.season-christmas .bg-slate-100,
+.season-christmas-eve .bg-slate-50,
+.season-christmas-eve .bg-slate-100 {
+  background-color: rgba(12, 51, 35, 0.55) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.season-christmas header,
+.season-christmas-eve header {
+  background-color: rgba(8, 38, 26, 0.85) !important;
+  border-color: #15803d !important;
+  box-shadow: 0 4px 25px rgba(220, 38, 38, 0.15) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.season-christmas footer,
+.season-christmas-eve footer {
+  background-color: rgba(4, 23, 15, 0.9) !important;
+  border-color: #15803d !important;
+}
+
+.season-christmas nav,
+.season-christmas-eve nav {
+  background-color: rgba(6, 34, 23, 0.85) !important;
+  border-color: #15803d !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.season-christmas .bg-blue-600,
+.season-christmas-eve .bg-blue-600 {
+  background-color: #DC2626 !important;
+  color: #FFFFFF !important;
+  border-color: #DC2626 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 18px rgba(220, 38, 38, 0.5) !important;
+}
+
+.season-christmas .bg-blue-600:hover,
+.season-christmas-eve .bg-blue-600:hover {
+  background-color: #EF4444 !important;
+}
+
+.season-christmas .text-blue-600,
+.season-christmas .text-blue-700,
+.season-christmas-eve .text-blue-600,
+.season-christmas-eve .text-blue-700 {
+  color: #F87171 !important;
+}
+
+.season-christmas .border-slate-200,
+.season-christmas .border-blue-100,
+.season-christmas-eve .border-slate-200 {
+  border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+/* Christmas Form Controls & Project Number */
+.season-christmas input:not([type="checkbox"]):not([type="radio"]),
+.season-christmas select,
+.season-christmas textarea,
+.season-christmas-eve input:not([type="checkbox"]):not([type="radio"]),
+.season-christmas-eve select,
+.season-christmas-eve textarea {
+  background-color: rgba(12, 51, 35, 0.75) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(220, 38, 38, 0.5) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.season-christmas input:focus,
+.season-christmas select:focus,
+.season-christmas textarea:focus,
+.season-christmas-eve input:focus,
+.season-christmas-eve select:focus,
+.season-christmas-eve textarea:focus {
+  border-color: #EF4444 !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.35), 0 0 16px rgba(239, 68, 68, 0.3) !important;
+}
+
+.season-christmas input::placeholder,
+.season-christmas textarea::placeholder,
+.season-christmas-eve input::placeholder,
+.season-christmas-eve textarea::placeholder {
+  color: rgba(167, 243, 208, 0.6) !important;
+}
+
+.season-christmas input[id*="projectNumber"],
+.season-christmas-eve input[id*="projectNumber"] {
+  background-color: rgba(12, 51, 35, 0.8) !important;
+  border: 2px solid #EF4444 !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.3) !important;
+}
+
+.season-christmas #file-drop-zone,
+.season-christmas-eve #file-drop-zone {
+  background-color: rgba(12, 51, 35, 0.5) !important;
+  border: 2px dashed rgba(220, 38, 38, 0.65) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  box-shadow: 0 0 25px rgba(220, 38, 38, 0.15) !important;
+}
+
+.season-christmas #file-drop-zone:hover,
+.season-christmas-eve #file-drop-zone:hover {
+  background-color: rgba(18, 70, 48, 0.7) !important;
+  border-color: #EF4444 !important;
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.35) !important;
+}
+
+.season-christmas label,
+.season-christmas-eve label,
+.season-christmas .text-slate-700,
+.season-christmas-eve .text-slate-700,
+.season-christmas .text-slate-800,
+.season-christmas .text-slate-900 {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.season-christmas .text-slate-500,
+.season-christmas .text-slate-600,
+.season-christmas-eve .text-slate-500,
+.season-christmas-eve .text-slate-600 {
+  color: #D1FAE5 !important;
+}
+
+/* ==========================================================================
+   SEASON 4: NEW YEAR PALETTE (January 1 - 15)
+   Midnight Sapphire, Exploding Fireworks, Champagne Imperial Gold & 2026
+   TRANSPARENT CELEBRATION PALETTE FOR FORM AND UPLOAD FIELD
+   ========================================================================== */
+html.season-new-year {
+  color-scheme: dark;
+  background-color: #050B18 !important;
+}
+
+html.season-new-year body {
+  background-color: #050B18 !important;
+  color: #F8FAFC !important;
+}
+
+/* Transparent glassmorphic cards to see the fireworks & celebration background */
+.season-new-year .bg-white,
+.season-new-year.dark .bg-white {
+  background-color: rgba(12, 23, 51, 0.45) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+.season-new-year .bg-slate-50,
+.season-new-year .bg-slate-100 {
+  background-color: rgba(17, 32, 70, 0.35) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(245, 158, 11, 0.25) !important;
+}
+
+.season-new-year header {
+  background-color: rgba(9, 19, 41, 0.8) !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  box-shadow: 0 4px 30px rgba(245, 158, 11, 0.2) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.season-new-year footer {
+  background-color: rgba(7, 15, 36, 0.9) !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+.season-new-year nav {
+  background-color: rgba(9, 19, 41, 0.8) !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.season-new-year .bg-blue-600,
+.season-new-year .bg-blue-500 {
+  background-color: #F59E0B !important;
+  color: #050B18 !important;
+  border-color: #F59E0B !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.6) !important;
+}
+
+.season-new-year .bg-blue-600:hover {
+  background-color: #FBBF24 !important;
+  color: #050B18 !important;
+  box-shadow: 0 0 28px rgba(251, 191, 36, 0.75) !important;
+}
+
+.season-new-year .text-blue-600,
+.season-new-year .text-blue-700 {
+  color: #FBBF24 !important;
+}
+
+.season-new-year .border-slate-200,
+.season-new-year .border-blue-100 {
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+/* New Year Transparent Form Inputs & Controls */
+.season-new-year input:not([type="checkbox"]):not([type="radio"]),
+.season-new-year select,
+.season-new-year textarea {
+  background-color: rgba(8, 18, 42, 0.55) !important;
+  color: #FEF08A !important;
+  border-color: rgba(245, 158, 11, 0.45) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.season-new-year input:focus,
+.season-new-year select:focus,
+.season-new-year textarea:focus {
+  border-color: #FBBF24 !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.45), 0 0 20px rgba(245, 158, 11, 0.35) !important;
+}
+
+.season-new-year input::placeholder,
+.season-new-year textarea::placeholder {
+  color: rgba(254, 240, 138, 0.45) !important;
+}
+
+/* New Year Project Number field special highlight: transparent with radiant gold border */
+.season-new-year input[id*="projectNumber"] {
+  background-color: rgba(6, 14, 34, 0.6) !important;
+  border: 2px solid rgba(245, 158, 11, 0.85) !important;
+  color: #FDE047 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* New Year Transparent Upload Dropzone */
+.season-new-year #file-drop-zone {
+  background-color: rgba(12, 24, 54, 0.35) !important;
+  border: 2px dashed rgba(245, 158, 11, 0.75) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.2) !important;
+}
+
+.season-new-year #file-drop-zone:hover {
+  background-color: rgba(16, 32, 72, 0.5) !important;
+  border-color: #FBBF24 !important;
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* New Year Text Visibility: Crisp Radiant White & Golden Accents */
+.season-new-year label,
+.season-new-year .text-slate-700,
+.season-new-year .text-slate-800,
+.season-new-year .text-slate-900 {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.season-new-year .text-slate-500,
+.season-new-year .text-slate-600 {
+  color: #FEF08A !important;
+}
+
+.season-new-year input:disabled {
+  background-color: rgba(6, 13, 30, 0.6) !important;
+  color: #FEF08A !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
