@@ -24,7 +24,7 @@ export const SCHEDULER_ROSTER: SchedulerItem[] = [
   { name: 'Lyn', email: 'rosalinda.loreno.ndsdata@gmail.com', region: 'Mid West' },
   { name: 'Marc', email: 'rodelpagcaliwagan.ndsdata@gmail.com', region: '', regions: ['Florida', 'South East'] },
   { name: 'Mia', email: 'joannamiajane.berania.ndsdata@gmail.com', region: 'North East' },
-  { name: 'Mitch', email: 'mich.cantillas.ndsdata@gmail.com', region: 'South East' },
+  { name: 'Mich', email: 'mich.cantillas.ndsdata@gmail.com', region: 'South East' },
   { name: 'Monica', email: 'monica.luzon.ndsdata@gmail.com', region: 'Mid Atlantic' },
   { name: 'Patrick', email: 'patrickf.baliton.ndsdata@gmail.com', region: 'South Central' },
   { name: 'Recca', email: 'recaangel.acera.ndsdata@gmail.com', region: 'GIS' },
