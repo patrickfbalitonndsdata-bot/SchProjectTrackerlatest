@@ -107,7 +107,8 @@ export const CATEGORY_RECOMMENDED_REASONS: Record<string, string[]> = {
     'New/moved/updated Install, TD or collection period',
   ],
   'Changes in PSU (Client)': [
-    'Addtional notes or special instruction',
+    'Additional notes or special instruction',
+    'Additional Locations',
   ],
   'Changes in PSU (NDS)': [
     'PSU updates due to data discrepancies',
