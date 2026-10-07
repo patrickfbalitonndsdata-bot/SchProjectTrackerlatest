@@ -8,8 +8,8 @@ export const detectSeasonByDate = (date: Date = new Date()): HolidaySeason => {
   const month = date.getMonth() + 1; // 1-indexed: 1 = Jan, 10 = Oct, 11 = Nov, 12 = Dec
   const day = date.getDate();
 
-  // 1. Halloween: Starting October 30 - November 30
-  if ((month === 10 && day >= 30) || (month === 11 && day <= 30)) {
+  // 1. Halloween: Starting October 20 - November 30
+  if ((month === 10 && day >= 20) || (month === 11 && day <= 30)) {
     return 'halloween';
   }
 
