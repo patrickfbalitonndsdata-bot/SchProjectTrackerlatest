@@ -239,7 +239,7 @@ export const SeasonalHolidayEffects: React.FC<SeasonalHolidayEffectsProps> = ({ 
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden select-none">
       {/* ============================================================
-          1. HALLOWEEN THEME (October 30 - November 30)
+          1. HALLOWEEN THEME (October 20 - November 30)
           Haunted cemetery / house, flying bats, floating ghosts, flying witch
           ============================================================ */}
       {season === 'halloween' && (
