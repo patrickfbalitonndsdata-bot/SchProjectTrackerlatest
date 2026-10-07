@@ -105,7 +105,7 @@ export const SheetSettingsModal: React.FC<SheetSettingsModalProps> = ({
     setSeasonMode(mode);
     const labelMap: Record<SeasonMode, string> = {
       auto: 'Auto (By Current Date)',
-      halloween: 'Halloween (October 30 – November 30)',
+      halloween: 'Halloween (October 20 – November 30)',
       christmas: 'Christmas (December)',
       christmas_eve: 'Christmas Eve (December 22 – 24)',
       new_year: `New Year ${currentYear} (January 1 – 15)`,
@@ -288,7 +288,7 @@ export const SheetSettingsModal: React.FC<SheetSettingsModalProps> = ({
                   }`}>
                     <div className="font-bold flex items-center justify-between">
                       <span>🎃 Halloween</span>
-                      <span className="font-mono text-[9.5px] opacity-75">Oct 30 – Nov 30</span>
+                      <span className="font-mono text-[9.5px] opacity-75">Oct 20 – Nov 30</span>
                     </div>
                     <div className="text-[10px] opacity-80 mt-0.5">Cemetery, flying bats, ghosts &amp; witches</div>
                   </div>
@@ -366,7 +366,7 @@ export const SheetSettingsModal: React.FC<SheetSettingsModalProps> = ({
                       {seasonMode === 'halloween' && <Check className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />}
                     </div>
                     <div className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">
-                      Oct 30 – Nov 30 &bull; Sinister Cemetery, Ghosts &amp; Bats
+                      Oct 20 – Nov 30 &bull; Sinister Cemetery, Ghosts &amp; Bats
                     </div>
                   </button>
 
